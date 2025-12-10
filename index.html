@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Python Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Calculadora Python</h1>
+        
+        <div class="calculator">
+            <!-- Display -->
+            <div class="display">
+                <div class="expression" id="expression">0</div>
+                <div class="result" id="result">0</div>
+            </div>
+            
+            <!-- Teclado -->
+            <div class="keypad">
+                <!-- Linha 1 -->
+                <button class="btn func" onclick="clearDisplay()">C</button>
+                <button class="btn func" onclick="backspace()"><i class="fas fa-backspace"></i></button>
+                <button class="btn func" onclick="appendToDisplay('(')">(</button>
+                <button class="btn func" onclick="appendToDisplay(')')">)</button>
+                <button class="btn func" onclick="appendToDisplay('/')">÷</button>
+                
+                <!-- Linha 2 -->
+                <button class="btn func" onclick="appendFunction('sqrt(')">√</button>
+                <button class="btn" onclick="appendToDisplay('7')">7</button>
+                <button class="btn" onclick="appendToDisplay('8')">8</button>
+                <button class="btn" onclick="appendToDisplay('9')">9</button>
+                <button class="btn func" onclick="appendToDisplay('*')">×</button>
+                
+                <!-- Linha 3 -->
+                <button class="btn func" onclick="appendFunction('sin(')">sin</button>
+                <button class="btn" onclick="appendToDisplay('4')">4</button>
+                <button class="btn" onclick="appendToDisplay('5')">5</button>
+                <button class="btn" onclick="appendToDisplay('6')">6</button>
+                <button class="btn func" onclick="appendToDisplay('-')">-</button>
+                
+                <!-- Linha 4 -->
+                <button class="btn func" onclick="appendFunction('cos(')">cos</button>
+                <button class="btn" onclick="appendToDisplay('1')">1</button>
+                <button class="btn" onclick="appendToDisplay('2')">2</button>
+                <button class="btn" onclick="appendToDisplay('3')">3</button>
+                <button class="btn func" onclick="appendToDisplay('+')">+</button>
+                
+                <!-- Linha 5 -->
+                <button class="btn func" onclick="appendFunction('tan(')">tan</button>
+                <button class="btn func" onclick="appendConstant('π')">π</button>
+                <button class="btn" onclick="appendToDisplay('0')">0</button>
+                <button class="btn" onclick="appendToDisplay('.')">.</button>
+                <button class="btn equals" onclick="calculate()">=</button>
+                
+                <!-- Linha 6 -->
+                <button class="btn func" onclick="appendFunction('log(')">log</button>
+                <button class="btn func" onclick="appendFunction('ln(')">ln</button>
+                <button class="btn func" onclick="appendFunction('pow(')">x^y</button>
+                <button class="btn func" onclick="appendConstant('e')">e</button>
+                <button class="btn func" onclick="appendToDisplay('**')">^</button>
+            </div>
+            
+            <!-- Histórico -->
+            <div class="history">
+                <h3>Histórico</h3>
+                <div id="history-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
